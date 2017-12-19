@@ -41,6 +41,7 @@
 			   break;
 			case 'Thé':
 			    echo $nomBoisson." : ".recetteThe($nbSucre);
+			    break;
 			default:
 				echo "Selection invalide";
 		}

@@ -34,10 +34,10 @@
 	<p>Café long : <?= recetteCafeLong(3)?> </p>
 	<p>Thé :  <?= recetteThe(1)?></p>
 	<br> -->
-</div>
+<!-- </div>
 <div id="choixboisson">
 	<p><?= preparerBoisson("Expresso", 3) ?><p>
-</div>
+</div> -->
 
 <div id="formulaire">
 	<form method="post" action="preparerboisson.php">
