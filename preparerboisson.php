@@ -3,9 +3,11 @@
 include "fonctions.php";
 
 $getBoisson = $_POST['choix'];
-$getSugar = $_POST['sucre'];
+$getSucre = $_POST['sucre'];
 
-echo preparerBoisson($getBoisson, $getSugar);
+echo preparerBoisson($getBoisson, $getSucre);
+
+
 
 
 ?> 

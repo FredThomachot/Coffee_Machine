@@ -2,7 +2,7 @@
 
 	$datetime = date("d-M-Y"); //Affiche la date du jour
 	$messageAttente = "En attente..."; // variable qui affiche un message
-	$sommeInsere = 0;
+	$sommeInsere = '0,00';
 
 	$listeBoisson =  array('Expresso', 'Café Long', 'Thé'); //tableau avec la liste des boissons
 
@@ -34,26 +34,24 @@
 	function preparerBoisson($nomBoisson, $nbSucre){
 		switch ($nomBoisson) {
 			case 'Expresso':
-				echo $nomBoisson." : ".recetteExpresso($nbSucre);
+				return $nomBoisson." : ".recetteExpresso($nbSucre);
 				break;
 			case 'Café long':
-				echo $nomBoisson." : ".recetteCafeLong($nbSucre);
+				return $nomBoisson." : ".recetteCafeLong($nbSucre);
 			   break;
 			case 'Thé':
-			    echo $nomBoisson." : ".recetteThe($nbSucre);
+			    return $nomBoisson." : ".recetteThe($nbSucre);
 			    break;
 			default:
-				echo "Selection invalide";
+				return "en attente...";
 		}
 	}
 
 
-
-
-
-
+	
 
 	
+
 
 
 ?>

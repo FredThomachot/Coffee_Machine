@@ -1,9 +1,14 @@
 
 <?php 
 	include "fonctions.php"; 
-	include "test.php";
-	/*include "preparerboisson.php";*/
-	?>
+
+	$liste = "en attente" ;
+
+	if(isset($_POST['choix']) && isset($_POST['sucre'])){
+		$liste = preparerBoisson($_POST['choix'], $_POST['sucre']);
+	}
+	
+?>
 
 
 <!DOCTYPE html>
@@ -19,28 +24,15 @@
 <body>
 
 <div id="debutcours">
-	<p>Date : <?= $datetime ?></p>
-	<p>Somme insérée : <?= $sommeInsere ?>€</p>
-	<p>Etat: <?= $messageAttente ?></p>
+	<p><strong>Date : </strong><?= $datetime ?></p>
+	<p><strong>Somme insérée : </strong><?= $sommeInsere ?>€</p>
+	<p><strong>Préparation......   </strong><?php echo $liste?></p>
 	<br>
-	<!-- <p>Liste des boissons : </p>
 
-		<ul><?= maListeBoisson($listeBoisson)?></ul>
-		<br> -->
-
-	<!-- <p>Recette des boissons : </p>
-
-	<p>Expresso : <?= recetteExpresso(2)?></p>
-	<p>Café long : <?= recetteCafeLong(3)?> </p>
-	<p>Thé :  <?= recetteThe(1)?></p>
-	<br> -->
-<!-- </div>
-<div id="choixboisson">
-	<p><?= preparerBoisson("Expresso", 3) ?><p>
-</div> -->
+	
 
 <div id="formulaire">
-	<form method="post" action="preparerboisson.php">
+	<form method="post" action="index.php">
 	    <p>Choix de la boisson :</p>
 	    <select name="choix" >
 			<option value="Expresso">Expresso</option>
@@ -48,7 +40,7 @@
 		    <option value="Thé">Thé</option>
         </select>
         <p>Nombre de sucre(s) :</p>
-			<input type="radio" name="sucre" value="0"  checked="checked" /> <label>0</label>
+			<input type="radio" name="sucre" value="0" /> <label>0</label>
 			<input type="radio" name="sucre" value="1" /> <label>1</label>
 			<input type="radio" name="sucre" value="2" /> <label>2</label>
 			<input type="radio" name="sucre" value="3" /> <label>3</label>
