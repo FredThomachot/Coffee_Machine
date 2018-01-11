@@ -1,15 +1,19 @@
 
 <?php 
-	include "fonctions.php"; 
 
-	$liste = "en attente" ;
 
-	if(isset($_POST['choix']) && isset($_POST['sucre'])){
-		$liste = preparerBoisson($_POST['choix'], $_POST['sucre']);
-	}
-	
-?>
 
+
+		include "fonctions.php"; 
+
+		$liste = "en attente" ;
+
+		if(isset($_POST['choix']) && isset($_POST['sucre'])){
+			$liste = preparerBoisson($_POST['choix'], $_POST['sucre']);
+		}
+		
+
+	?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,14 +28,32 @@
 <body>
 
 <div id="debutcours">
+	<h1>Coffee Machine</h1>
 	<p><strong>Date : </strong><?= $datetime ?></p>
 	<p><strong>Somme insérée : </strong><?= $sommeInsere ?>€</p>
-	<p><strong>Préparation......   </strong><?php echo $liste?></p>
+	<p><strong>Préparation......   </strong><?= $liste?></p>
 	<br>
 
 	
+	<p><strong>Boissons : </strong><?=  listeBoisson();  ?> <br></p>
 
-<div id="formulaire">
+		
+
+	<p><strong>Ingrédients en rupture: </strong> <br></p>
+
+	    
+
+	<p><strong>Recette de l'expresso : </strong> <br></p>
+
+	    
+
+
+
+
+
+
+
+<!-- <div id="formulaire">
 	<form method="post" action="index.php">
 	    <p>Choix de la boisson :</p>
 	    <select name="choix" >
@@ -48,8 +70,7 @@
 			<br>
 		<input type="submit" value="Valider" />
 	</form>
-</div>
-
+</div> -->
 
 
 
